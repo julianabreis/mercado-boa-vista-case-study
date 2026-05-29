@@ -19,3 +19,7 @@ Desktop.ini
 !data/.gitkeep
 !docs/.gitkeep
 !exports/.gitkeep
+
+# Power BI PBIP local/cache files
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
