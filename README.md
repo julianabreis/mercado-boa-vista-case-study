@@ -99,4 +99,4 @@ Em desenvolvimento.
 
 ## 11. Autoria
 
-Projeto desenvolvido por Juliana como estudo de caso em análise de dados e Power BI.
+Projeto desenvolvido por Juliana Reis como estudo de caso em análise de dados e Power BI.
