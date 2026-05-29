@@ -1,0 +1,21 @@
+﻿# Windows
+Thumbs.db
+Desktop.ini
+
+# Power BI temporary/cache files
+*.tmp
+*.temp
+*.bak
+
+# Logs
+*.log
+
+# Large exported files if needed
+# *.zip
+
+# Keep folder structure
+!assets/images/.gitkeep
+!assets/powerbi/.gitkeep
+!data/.gitkeep
+!docs/.gitkeep
+!exports/.gitkeep
