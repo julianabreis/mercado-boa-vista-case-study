@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "mercado_boa_vista_dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4395eec4-e7af-4bb4-8c96-5f28b872c347"
+  }
+}

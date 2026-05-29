@@ -1,0 +1,204 @@
+table vw_sales_detail
+	lineageTag: ab5f1758-dfcb-40c1-98dc-acf545968894
+
+	measure 'Ticket Médio' =
+			
+			DIVIDE(
+			    SUM(vw_sales_detail[line_total]),
+			    DISTINCTCOUNT(vw_sales_detail[sale_id])
+			)
+		lineageTag: d69b566d-4071-41c8-9cef-f1b5be8f8e7e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column sale_id
+		dataType: string
+		lineageTag: 7ee15f0f-b196-4c26-965f-b89074cb8339
+		summarizeBy: none
+		sourceColumn: sale_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_date
+		dataType: string
+		lineageTag: 6ecda790-6cc4-40d7-90e4-21831ce284f3
+		summarizeBy: none
+		sourceColumn: sale_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column sale_month
+		dataType: string
+		lineageTag: 31a30abb-28f3-4bf4-96ce-c56676238238
+		summarizeBy: none
+		sourceColumn: sale_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 455eaf0d-8a78-45ad-b852-fd7a24b7fb43
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: 47248d61-a7c0-4263-b4f5-9f3c37252ce1
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column city
+		dataType: string
+		lineageTag: 56314771-0372-4b14-b0b0-012995b8ac28
+		summarizeBy: none
+		sourceColumn: city
+
+		annotation SummarizationSetBy = Automatic
+
+	column state
+		dataType: string
+		lineageTag: 247de54e-07e1-41f2-a5d2-ef13bca2d28a
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_id
+		dataType: string
+		lineageTag: 030a223c-037d-4587-978f-95052d5c687b
+		summarizeBy: none
+		sourceColumn: seller_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column seller_name
+		dataType: string
+		lineageTag: f71fd088-a688-4958-92d2-95746a80c0e6
+		summarizeBy: none
+		sourceColumn: seller_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column shift
+		dataType: string
+		lineageTag: f4d9bfca-6b2d-499f-8a6b-1c43134f6fad
+		summarizeBy: none
+		sourceColumn: shift
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		lineageTag: 5cdd4db5-dca5-4765-9540-647651c65aa7
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_id
+		dataType: string
+		lineageTag: c47ffa96-68e5-4abf-87b8-4dbc8ef69c21
+		summarizeBy: none
+		sourceColumn: product_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_name
+		dataType: string
+		lineageTag: 63a1a38b-2ac7-4432-9977-46fced9f38bf
+		summarizeBy: none
+		sourceColumn: product_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column category
+		dataType: string
+		lineageTag: 2e54aa36-6166-4c3c-830d-2d4d2871e6b0
+		summarizeBy: none
+		sourceColumn: category
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity
+		dataType: string
+		lineageTag: a6694962-851e-45c4-a308-da2ddb59e7b6
+		summarizeBy: none
+		sourceColumn: quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_price
+		dataType: double
+		lineageTag: 368044f5-f1ea-41c0-be2e-bd9d42e42f66
+		summarizeBy: sum
+		sourceColumn: unit_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column line_total
+		dataType: double
+		formatString: "R$"\ #,0.00;-"R$"\ #,0.00;"R$"\ #,0.00
+		lineageTag: 7db6f68a-62d0-4f7b-ba9d-581ebf4a746b
+		summarizeBy: sum
+		sourceColumn: line_total
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column 'Mês Ano' = FORMAT('vw_sales_detail'[sale_date], "mmm/yy")
+		lineageTag: 139b1af2-63d9-465e-8235-055f3bfd959c
+		summarizeBy: none
+		sortByColumn: 'Mês Ano Data'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordem Mês' = YEAR('vw_sales_detail'[sale_date]) * 100 + MONTH('vw_sales_detail'[sale_date])
+		formatString: 0
+		lineageTag: 737397ff-dafb-4e49-b0b2-cce1f88e87e2
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Mês Ano Data' =
+			DATE(
+			    YEAR('vw_sales_detail'[sale_date]),
+			    MONTH('vw_sales_detail'[sale_date]),
+			    1
+			)
+		formatString: General Date
+		lineageTag: 54870469-5b3c-4b9f-9882-40198b7f9e5f
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 3ec12627-4b9c-4faf-acec-2bea7f059727
+			defaultHierarchy: LocalDateTable_37ecc81d-12e1-471a-bd5c-0a1935e5f663.'Hierarquia de datas'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition vw_sales_detail = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(File.Contents("C:\Users\julia\Desktop\vw_sales_detail.csv"),[Delimiter=",", Columns=17, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado com Localidade" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos", {{"unit_price", type number}}, "en-US"),
+				    #"Tipo Alterado com Localidade1" = Table.TransformColumnTypes(#"Tipo Alterado com Localidade", {{"line_total", type number}}, "en-US")
+				in
+				    #"Tipo Alterado com Localidade1"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

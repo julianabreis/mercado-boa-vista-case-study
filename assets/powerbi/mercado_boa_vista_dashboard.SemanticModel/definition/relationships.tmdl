@@ -1,0 +1,5 @@
+relationship 3ec12627-4b9c-4faf-acec-2bea7f059727
+	joinOnDateBehavior: datePartOnly
+	fromColumn: vw_sales_detail.'Mês Ano Data'
+	toColumn: LocalDateTable_37ecc81d-12e1-471a-bd5c-0a1935e5f663.Date
+
