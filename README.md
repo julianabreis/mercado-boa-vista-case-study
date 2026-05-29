@@ -8,7 +8,13 @@ O objetivo principal do projeto é apoiar a tomada de decisão gerencial, permit
 
 ---
 
-## 2. Problema de Negócio
+## 2. Prévia do Dashboard
+
+![Dashboard Mercado Boa Vista](assets/images/dashboard-overview.png)
+
+---
+
+## 3. Problema de Negócio
 
 O Mercado Boa Vista precisava entender melhor seus dados de vendas para responder perguntas como:
 
@@ -20,7 +26,7 @@ O Mercado Boa Vista precisava entender melhor seus dados de vendas para responde
 
 ---
 
-## 3. Objetivo do Dashboard
+## 4. Objetivo do Dashboard
 
 O dashboard foi desenvolvido para apresentar, de forma visual e objetiva:
 
@@ -32,7 +38,7 @@ O dashboard foi desenvolvido para apresentar, de forma visual e objetiva:
 
 ---
 
-## 4. Ferramentas Utilizadas
+## 5. Ferramentas Utilizadas
 
 - Power BI
 - Power Query
@@ -42,7 +48,7 @@ O dashboard foi desenvolvido para apresentar, de forma visual e objetiva:
 
 ---
 
-## 5. Estrutura do Repositório
+## 6. Estrutura do Repositório
 
 - assets/images: imagens e capturas de tela do dashboard;
 - assets/powerbi: arquivos do Power BI;
@@ -52,7 +58,7 @@ O dashboard foi desenvolvido para apresentar, de forma visual e objetiva:
 
 ---
 
-## 6. Principais Análises
+## 7. Principais Análises
 
 As análises do projeto buscam responder perguntas importantes para o negócio, como:
 
@@ -65,7 +71,7 @@ As análises do projeto buscam responder perguntas importantes para o negócio, 
 
 ---
 
-## 7. Storytelling com Dados
+## 8. Storytelling com Dados
 
 O dashboard foi estruturado com foco em storytelling, para que o usuário consiga entender rapidamente:
 
@@ -77,12 +83,20 @@ O dashboard foi estruturado com foco em storytelling, para que o usuário consig
 
 ---
 
-## 8. Status do Projeto
+## 9. Documentação Completa
+
+A documentação detalhada do estudo de caso está disponível em:
+
+- docs/case-study.md
+
+---
+
+## 10. Status do Projeto
 
 Em desenvolvimento.
 
 ---
 
-## 9. Autoria
+## 11. Autoria
 
 Projeto desenvolvido por Juliana como estudo de caso em análise de dados e Power BI.
